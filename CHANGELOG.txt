@@ -1,0 +1,13 @@
+Changelog file for Structures extra.
+https://github.com/mctechnology17/vim-executor/blob/master/CHANGELOG.txt
+
+# Structures 0.0.1-beta1 April 11, 2022
+=======================================
+
+# List of exciting new features
+
++ INITIAL RELEASE
+ - vim-executor is now a plugin for vim.
+
++ TODO
+ - doc, tags, README, photos, etc.

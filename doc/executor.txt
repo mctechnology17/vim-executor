@@ -1,0 +1,152 @@
+*executor.txt*                                  Multilanguage code executor
+                                                *executor* *:executor*
+
+
+                               ╔═╦═╦═╗
+                        ╔════╗ ║║║║║╔╝
+                        ║╔╗╔╗║ ║║║║║╚╗
+                        ╚╝║║╚╝ ║╠═╩╩═╝
+                          ║╠═╦═╣╚╦═╦╦═╦╗╔═╦═╦╦╗
+                          ║║╩╣═╣║║║║║╬║╚╣╬║╬║║║
+                          ╚╩═╩═╩╩╩╩═╩═╩═╩═╬╗╠╗║
+                                          ╚═╩═╝
+
+============================================================================
+CONTENTS                                                *executor-contents*
+
+
+   01. Intro ........................................... |executor-intro|
+   02. Features ..................................... |executor-features|
+   03. Installation ............................. |executor-installation|
+   04. Customization ........................... |executor-customization|
+   05. Contributions ........................... |executor-contributions|
+   06. Bugs ............................................. |executor-bugs|
+   07. Changelog ................................... |executor-changelog|
+   08. credits ....................................... |executor-credits|
+   09. License ....................................... |executor-license|
+
+============================================================================
+INTRODUCTION                                              *executor-intro*
+
+`executor` ist a multilanguage code executor
+#executor ejecutador de código multilenguaje para vim y
+Multilanguage code executor
+soon available on my GitHub. Run, compile, clean, debug and more with just 1
+click! Compatibility: python,sh,r,c,cpp,markdown,css,html,javascript (for now)
+
+pronto disponible en mi GitHub. Ejecuta, compila, limpia, depura y más con tan
+solo 1 click! Compatibilidad: python,sh,r,c,cpp,markdown,css,html,javascript
+(por ahora)
+
+============================================================================
+FEATURES                                               *executor-features*
+
+`executor` compatible with all programming languages, markup language,
+scripts, etc. here are some as an example:
+
+cpp,c,go,java,javascript,scala,php,rust,jsonc,json,vim,python,r,ruby,
+sh,desktop,fstab,profile,text,tmux,make,dockerfile,bashrc,zsh,zshrc,
+bash_profile,gitignore,yaml,gdb,gitconfig,conf,fish,sshconfig,html,
+xml,tex,mail,lua,dosbatch,autohotkey
+This is an example of the header that is used as a format:
+
+    >
+<
+
+============================================================================
+INSTALLATION                                       *executor-installation*
+
+Quick start
+
+    >
+        git clone https://github.com/mctechnology17/vim-executor
+        # set on your .vimrc or init.vim
+        set rtp+=~/vim-executor
+<
+
+Using Vundle: https://github.com/gmarik/vundle
+
+Just add this line to your `~/.vimrc`:
+
+    >
+        Plugin 'mctechnology17/vim-executor'
+<
+
+And run `:PluginInstall` inside Vim.
+
+Using pathogen.vim: https://github.com/tpope/vim-pathogen
+
+Copy and paste in your shell:
+
+    >
+        cd ~/.vim/bundle
+        git clone https://github.com/mctechnology17/vim-executor
+<
+
+Using vpm: https://github.com/KevinSjoberg/vpm
+
+Run this command in your shell:
+
+    >
+        vpm insert mctechnology17/vim-executor
+<
+
+Using Plug: https://github.com/junegunn/vim-plug
+
+Just add this line to your `~/.vimrc` inside plug call:
+
+    >
+        Plug 'mctechnology17/vim-executor'
+<
+
+And run `:PlugInstall` inside Vim or `vim +PlugInstall +qa` from shell.
+
+============================================================================
+CUSTOMIZATION                                   *executor-customization*
+
+    >
+<
+
+============================================================================
+CONTRIBUTIONS                                   *executor-contributions*
+
+Contributions are welcomed and appreciated. Just follow the normal Github
+procedure. Go to:
+
+    https://github.com/mctechnology17/vim-executor
+
+Fork the project. Work on what you think would make it better. Send a pull
+request.
+
+============================================================================
+BUGS                                                       *executor-bugs*
+
+Before submitting a bug report, try upgrading to the latest version of the
+plugin. The bug could have been fixed already.
+
+If the problem persists, go to:
+
+    https://github.com/mctechnology17/vim-executor
+
+Check the list of open issues and see if the problem you are facing has not
+been reported already. You can add more information to the issue in case it
+has. Otherwise, submit a new issue.
+
+============================================================================
+CHANGELOG                                             *executor-changelog*
+
+Refer to CHANGELOG.txt
+
+============================================================================
+CREDITS                                                 *executor-credits*
+
+Marcos Chow Castro - MC Technology
+Mail: mctechnology170318@gmail.com
+GitHub: https://github.com/mctechnology17
+Twitter: https://twitter.com/mctechnology17
+Youtube: https://www.youtube.com/c/mctechnology17
+
+============================================================================
+LICENSE                                                 *executor-license*
+
+Released under the GNU General Public License v3.0.
