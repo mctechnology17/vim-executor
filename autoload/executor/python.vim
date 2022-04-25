@@ -38,22 +38,16 @@ function executor#python#debuggerpdbpp()
     let g:executor_program_args_python = ''
   endif
 
-  if has('python3')
-    if s:is_nvim
-      " exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
-      exe 'vsplit term://python '
-            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
-            \ ' pdb % '.g:executor_program_args_python
-    else
-      " execute 'vert term python '.g:executor_pdbpp_flags.' pdb % '.g:executor_program_args
-      exe 'vert term python '
-            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
-            \ ' pdb % '.g:executor_program_args_python
-    endif
+  if s:is_nvim
+    " exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+    exe 'vsplit term://python '
+          \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+          \ ' pdb % '.g:executor_program_args_python
   else
-    echohl Error
-    echom 'executor: python3 not found'
-    echohl None
+    " execute 'vert term python '.g:executor_pdbpp_flags.' pdb % '.g:executor_program_args
+    exe 'vert term python '
+          \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+          \ ' pdb % '.g:executor_program_args_python
   endif
 endfunction
 "}}}

@@ -281,8 +281,8 @@ function! executor#ToggleDebuggerMapping()
     tnoremap <silent> <TAB><DOWN> <NOP>
     tnoremap <silent> <TAB><RIGHT> <NOP>
     tnoremap <silent> <TAB><LEFT> <NOP>
-    tnoremap <silent> <TAB>bb <NOP>
-    nnoremap <silent> <TAB>bc <NOP>
+    tnoremap <silent> <TAB>b <NOP>
+    nnoremap <silent> <TAB>db <NOP>
     tnoremap <silent> <TAB>v <NOP>
     tnoremap <silent> <TAB>e <NOP>
 
@@ -295,8 +295,8 @@ function! executor#ToggleDebuggerMapping()
     nnoremap <silent> <TAB><RIGHT> <NOP>
     nnoremap <silent> <TAB><LEFT> <NOP>
     nnoremap <silent> <TAB>dw <NOP>
-    nnoremap <silent> <TAB>bb <NOP>
-    nnoremap <silent> <TAB>bc <NOP>
+    nnoremap <silent> <TAB>b <NOP>
+    nnoremap <silent> <TAB>db <NOP>
     nnoremap <silent> <TAB>v <NOP>
     nnoremap <silent> <TAB>e <NOP>
   endif
@@ -320,8 +320,8 @@ function! executor#ToggleDebuggerMapping()
     tnoremap <silent> <TAB><DOWN> down<CR>
     tnoremap <silent> <TAB><RIGHT> next<CR>
     tnoremap <silent> <TAB><LEFT> reteval<CR>
-    tnoremap <silent> <TAB>bb break<Space>
-    nnoremap <silent> <TAB>bc clear<CR>
+    tnoremap <silent> <TAB>b break<Space>
+    nnoremap <silent> <TAB>db clear<CR>
     tnoremap <silent> <TAB>v jump<CR>
     tnoremap <silent> <TAB>e p<Space>
   endif
@@ -341,8 +341,8 @@ function! executor#ToggleDebuggerMapping()
     nnoremap <silent> <TAB><RIGHT> :call vimspector#StepOver()<CR>
     nnoremap <silent> <TAB><LEFT> :call vimspector#AddWatch( expand( '<cexpr>' ) )<CR>
     nnoremap <silent> <TAB>dw :call vimspector#DeleteWatch()<CR>
-    nnoremap <silent> <TAB>bb :call vimspector#ToggleBreakpoint()<CR>
-    nnoremap <silent> <TAB>bc :call vimspector#ClearBreakpoints()<CR>
+    nnoremap <silent> <TAB>b :call vimspector#ToggleBreakpoint()<CR>
+    nnoremap <silent> <TAB>db :call vimspector#ClearBreakpoints()<CR>
     nnoremap <silent> <TAB>v :call vimspector#RunToCursor()<CR>
     nnoremap <silent> <TAB>e :<c-u>call vimspector#Evaluate( expand( '<cexpr>' ) )<CR>
   endif
@@ -431,7 +431,7 @@ function! executor#OpenTerminalVSC()
   endif
 endfunction
 "}}}
-""" executor#ToggleResize {{{
+""" executor#ToggleResizeWindows {{{
 fu! s:ResizeOn()
   echoh MoreMsg | echon 'executor: ExecutorResizeWindows ON' | echoh None
   let s:executor_resize_windows = 0
@@ -456,7 +456,7 @@ fu! s:ResizeOff()
   unmap l
   unmap h
 endf
-fun! executor#ToggleResize()
+fun! executor#ToggleResizeWindows()
 	if s:executor_resize_windows
     call s:ResizeOn()
   else
@@ -581,7 +581,7 @@ function! executor#Menu()
   echom '1.ExecutorTerminalVert'
   echom '2.ExecutorTerminal'
   echom '3.ExecutorTerminalVSC'
-  echom '4.ExecutorResizeWindows'
+  echom '4.ExecutorToggleResizeWindows'
   echom '5.ExecutorDebugger'
   echom '6.ExecutorToggleDefineDebugger'
   echom '7.ExecutorInstallPDBPP'
@@ -611,7 +611,7 @@ function! executor#Menu()
   elseif s:executor_dialer == 3
     call executor#OpenTerminalVSC()
   elseif s:executor_dialer == 4
-    call executor#ToggleResize()
+    call executor#ToggleResizeWindows()
   elseif s:executor_dialer == 5
     call executor#Debugger()
   elseif s:executor_dialer == 6
