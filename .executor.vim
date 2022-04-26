@@ -112,8 +112,8 @@ ExecutorToggleDebuggerMapping call executor#ToggleDebuggerMapping()
 " map: <TAB><DOWN> down<CR>
 " map: <TAB><RIGHT> next<CR>
 " map: <TAB><LEFT> reteval<CR>
-" map: <TAB>bb break<Space>
-" map: <TAB>bc clear<CR>
+" map: <TAB>b break<Space>
+" map: <TAB>db clear<CR>
 " map: <TAB>v jump<CR>
 " map: <TAB>e p<Space>
 " Mappgin for vimspector option 4
@@ -126,8 +126,8 @@ ExecutorToggleDebuggerMapping call executor#ToggleDebuggerMapping()
 " map: <TAB><RIGHT> :call vimspector#StepOver()<CR>
 " map: <TAB><LEFT> :call vimspector#AddWatch( expand( '<cexpr>' ) )<CR>
 " map: <TAB>dw :call vimspector#DeleteWatch()<CR>
-" map: <TAB>bb :call vimspector#ToggleBreakpoint()<CR>
-" map: <TAB>bc :call vimspector#ClearBreakpoints()<CR>
+" map: <TAB>b :call vimspector#ToggleBreakpoint()<CR>
+" map: <TAB>db :call vimspector#ClearBreakpoints()<CR>
 " map: <TAB>v :call vimspector#RunToCursor()<CR>
 " map: <TAB>e :<c-u>call vimspector#Evaluate( expand( '<cexpr>' ) )<CR>
 " install the debugger pdbpp with pip for python

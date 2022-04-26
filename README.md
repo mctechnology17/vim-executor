@@ -62,7 +62,7 @@ nnoremap <Leader>+ :ExecutorCompiler<CR>
 nnoremap <Leader>c :ExecutorClean<CR>
 nnoremap <Leader>m :ExecutorZoom<CR>
 noremap -m :ExecutorMenu<CR>
-noremap -x :ExecutorToggleDebuggerMapping<CR>
+noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
 
 [//]: # (  <img src="https://github.com/mctechnology17/mctechnology17/blob/main/src/vim-executor-demo.MOV" height="450"> )
