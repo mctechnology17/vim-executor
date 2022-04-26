@@ -21,6 +21,8 @@
 `executor` multilanguage code executor for vim. Run, compile, clean, debug
 and more with just 1 click!
 
+tmux, run code, debugger and more all in one place with native vim!
+
 Compatibility:
 ```bash
 python,sh,r,c,cpp,markdown,css,html,javascript # for now
