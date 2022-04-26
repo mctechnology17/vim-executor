@@ -43,7 +43,6 @@ Plug 'mctechnology17/vim-executor'
 
 " make sure you have pdflatex installed (soon pandoc support)
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'tpope/vim-markdown'
 " make sure you have yarn installed
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " for html,css,javascript
