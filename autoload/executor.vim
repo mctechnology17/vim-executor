@@ -577,28 +577,25 @@ augroup END
 function! executor#Menu()
   call inputsave()
   echohl MoreMsg
-  " TODO ordenar por categoria para hacer mas facil la busqueda
-  echom '1.ExecutorTerminalVert'
-  echom '2.ExecutorTerminal'
-  echom '3.ExecutorTerminalVSC'
-  echom '4.ExecutorToggleResizeWindows'
-  echom '5.ExecutorDebugger'
-  echom '6.ExecutorToggleDefineDebugger'
-  echom '7.ExecutorInstallPDBPP'
-  echom '8.ExecutorUninstallPDBPP'
-  echom '9.ExecutorInstallPDBPPConda'
-  echom '10.ExecutorUninstallPDBPPConda'
-  echom '11.ExecutorRun'
-  echom '12.ExecutorClean'
-  echom '13.ExecutorCompiler'
-  echom '14.ExecutorZoom'
-  echom '15.ExecutorToggleArgs'
-  echom '16.ExecutorMenu'
-  echom '17.ExecutorWinBar'
-  echom '18.ExecutorKillAllBuffers'
-  echom '19.ExecutorToggleDebbugerMapping'
-  " TODO:
-  " echom '20.ExecutorConfig'
+  echom ' '
+  echom "Date: "strftime("%H:%M %d.%B.%Y")
+  echom "==================================================="
+  echom "|         █▀▀ ▀▄▀ █▀▀ █▀▀ █░█ ▀█▀ █▀█ █▀█         |"
+  echom "|         ██▄ █░█ ██▄ █▄▄ █▄█ ░█░ █▄█ █▀▄         |"
+  echom "|-------------------------------------------------|"
+  echom '| 1.TerminalVert         11.Run                   |'
+  echom '| 2.Terminal             12.Clean                 |'
+  echom '| 3.TerminalVSC          13.Compiler              |'
+  echom '| 4.ToggleResizeWindows  14.Zoom                  |'
+  echom '| 5.Debugger             15.ToggleArgs            |'
+  echom '| 6.ToggleDefineDebugger 16.Menu                  |'
+  echom '| 7.InstallPDBPP         17.WinBar                |'
+  echom '| 8.UninstallPDBPP       18.KillAllBuffers        |'
+  echom '| 9.InstallPDBPPConda    19.ToggleDebbugerMapping |'
+  echom '| 10.UninstallPDBPPConda 20.Config (soon)         |'
+  echom "|-------------------------------------------------|"
+  echom '|                   ENTER TO EXIT                 |'
+  echom "|-------------------------------------------------|"
   echohl None
   let s:executor_dialer = input('Enter number: ')
   call inputrestore()
