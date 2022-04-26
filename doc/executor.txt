@@ -28,7 +28,7 @@ CONTENTS                                                *executor-contents*
 ============================================================================
 INTRODUCTION                                              *executor-intro*
 
-`executor` ist a multilanguage code executor
+`executor` a multilanguage code executor
 #executor ejecutador de código multilenguaje para vim y
 Multilanguage code executor
 soon available on my GitHub. Run, compile, clean, debug and more with just 1

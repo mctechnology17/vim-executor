@@ -35,6 +35,18 @@ and the arguments for the following variables in your `.vimrc`
 ```vim
 " install executor with Plug
 Plug 'mctechnology17/vim-executor'
+" you can use all executor functions without dependencies, but if
+" you want latex preview, markdown, html, css and javascript you need
+" to install these additional plugins!
+
+" make sure you have pdflatex installed (soon pandoc support)
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'tpope/vim-markdown'
+" make sure you have yarn installed
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+" for html,css,javascript
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+
 " refresh the sources or close vim and go back in and run the command
 :PlugInstall
 
@@ -64,9 +76,16 @@ nnoremap <Leader>m :ExecutorZoom<CR>
 noremap -m :ExecutorMenu<CR>
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
-Hier -> [.executor.vim](.executor.vim): you can see the default configuration, so you can orient yourself in your vimrc
+Hier -> [.executor.vim](.executor.vim) you can see the default configuration, so you can orient yourself in your vimrc
 
 [//]: # (  <img src="https://github.com/mctechnology17/mctechnology17/blob/main/src/vim-executor-demo.MOV" height="450"> )
+
+#### Interactive menu with dialer
+<img src="./src/executor_menu.png" height="450">
+
+#### Run, compile, clean, debug and more with just 1 click!
+
+<img src="./src/executor_winbar.png" height="450">
 
 #### Manuaal installation
 If you are not using any plug manager, you can integrate GitManager to

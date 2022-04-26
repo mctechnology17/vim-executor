@@ -301,6 +301,38 @@ function! executor#ToggleDebuggerMapping()
     nnoremap <silent> <TAB>e <NOP>
   endif
   "}}}
+  """ g:executor_toggle_debugger_mapping == 1 {{{
+  if g:executor_toggle_debugger_mapping == 1
+    echohl MoreMsg
+    echom ' '
+    echom ' executor: MAP gdb coming soon XD '
+    echohl None
+  endif
+  "}}}
+  """ g:executor_toggle_debugger_mapping == 2 {{{
+  if g:executor_toggle_debugger_mapping == 2
+    echohl MoreMsg
+    echom ' '
+    echom ' executor: MAP pdb DONE '
+    echohl None
+    tnoremap <silent> <TAB>u gui<CR>
+    tnoremap <silent> <TAB>d run<Space>
+    tnoremap <silent> <TAB>r restart<Space>
+    tnoremap <silent> <TAB>q quit<CR>
+    tnoremap <silent> <TAB>n next<CR>
+    tnoremap <silent> <TAB>h help<CR>
+    tnoremap <silent> <TAB>w where<CR>
+    tnoremap <silent> <TAB>c continue<CR>
+    tnoremap <silent> <TAB>s step<CR>
+    tnoremap <silent> <TAB><UP> up<CR>
+    tnoremap <silent> <TAB><DOWN> down<CR>
+    tnoremap <silent> <TAB><RIGHT> next<CR>
+    tnoremap <silent> <TAB><LEFT> reteval<CR>
+    tnoremap <silent> <TAB>b break<Space>
+    tnoremap <silent> <TAB>v jump<CR>
+    tnoremap <silent> <TAB>e p<Space>
+  endif
+  "}}}
   """ g:executor_toggle_debugger_mapping == 3 {{{
   if g:executor_toggle_debugger_mapping == 3
     echohl MoreMsg
@@ -580,6 +612,11 @@ function! executor#Menu()
   echom ' '
   echom "Date: "strftime("%H:%M %d.%B.%Y")
   echom "==================================================="
+  " echom "| Program: Executor                               |"
+  " echom "| Author: Marcos Chow Castro                      |"
+  " echom "| Email: mctechnology170318@gmail.com             |"
+  " echom "| GitHub: https://github.com/mctechnology17       |"
+  " echom "| Brief: Multilanguage code executor              |"
   echom "|         █▀▀ ▀▄▀ █▀▀ █▀▀ █░█ ▀█▀ █▀█ █▀█         |"
   echom "|         ██▄ █░█ ██▄ █▄▄ █▄█ ░█░ █▄█ █▀▄         |"
   echom "|-------------------------------------------------|"
