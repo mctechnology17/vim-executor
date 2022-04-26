@@ -64,6 +64,7 @@ nnoremap <Leader>m :ExecutorZoom<CR>
 noremap -m :ExecutorMenu<CR>
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
+[Hier](.executor.vim): you can see the default configuration, so you can orient yourself in your vimrc
 
 [//]: # (  <img src="https://github.com/mctechnology17/mctechnology17/blob/main/src/vim-executor-demo.MOV" height="450"> )
 
