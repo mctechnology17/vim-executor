@@ -233,8 +233,8 @@ function! executor#UninstallPDBPPConda()
   endif
 endfunction
 "}}}
-""" executor#ToggleDefineDebugger {{{
-function! executor#ToggleDefineDebugger()
+""" executor#ToggleDebuggerDefine {{{
+function! executor#ToggleDebuggerDefine()
   if g:executor_debugger_define == 1
     let g:executor_debugger_define = 0
     echohl MoreMsg | echom ' executor: ExecutorDefineDebugger OFF ' | echohl None
@@ -611,73 +611,73 @@ function! executor#Menu()
   echohl MoreMsg
   echom ' '
   echom "Date: "strftime("%H:%M %d.%B.%Y")
-  echom "==================================================="
+  echom "==========================================="
   " echom "| Program: Executor                               |"
   " echom "| Author: Marcos Chow Castro                      |"
   " echom "| Email: mctechnology170318@gmail.com             |"
   " echom "| GitHub: https://github.com/mctechnology17       |"
   " echom "| Brief: Multilanguage code executor              |"
-  echom "|         █▀▀ ▀▄▀ █▀▀ █▀▀ █░█ ▀█▀ █▀█ █▀█         |"
-  echom "|         ██▄ █░█ ██▄ █▄▄ █▄█ ░█░ █▄█ █▀▄         |"
-  echom "|-------------------------------------------------|"
-  echom '| 1.TerminalVert         11.Run                   |'
-  echom '| 2.Terminal             12.Clean                 |'
-  echom '| 3.TerminalVSC          13.Compiler              |'
-  echom '| 4.ToggleResizeWindows  14.Zoom                  |'
-  echom '| 5.Debugger             15.ToggleArgs            |'
-  echom '| 6.ToggleDefineDebugger 16.Menu                  |'
-  echom '| 7.InstallPDBPP         17.WinBar                |'
-  echom '| 8.UninstallPDBPP       18.KillAllBuffers        |'
-  echom '| 9.InstallPDBPPConda    19.ToggleDebbugerMapping |'
-  echom '| 10.UninstallPDBPPConda 20.Config (soon)         |'
-  echom "|-------------------------------------------------|"
-  echom '|                   ENTER TO EXIT                 |'
-  echom "|-------------------------------------------------|"
+  echom "|     █▀▀ ▀▄▀ █▀▀ █▀▀ █░█ ▀█▀ █▀█ █▀█     |"
+  echom "|     ██▄ █░█ ██▄ █▄▄ █▄█ ░█░ █▄█ █▀▄     |"
+  echom "|-----------------------------------------|"
+  echom '| 1.Run                   11.TerminalVSC  |'
+  echom '| 2.Compiler              12.Terminal     |'
+  echom '| 3.Debugger              13.TerminalVert |'
+  echom '| 4.ToogleDebuggerDefine  14.Zoom         |'
+  echom '| 5.ToggleDebuggerMapping 15.Clean        |'
+  echom '| 6.ToggleArgs            16.WinBar       |'
+  echom '| 7.ToggleResizeWindows                   |'
+  echom '| 8.InstallPDBPP                          |'
+  echom '| 9.InstallPDBPPConda                     |'
+  echom '| 10.KillAllBuffers                       |'
+  echom "|-----------------------------------------|"
+  echom '|              ENTER TO EXIT              |'
+  echom "|-----------------------------------------|"
   echohl None
   let s:executor_dialer = input('Enter number: ')
   call inputrestore()
   if s:executor_dialer == ''
     return
   elseif s:executor_dialer == 1
-    call executor#OpenTerminalVert()
+    call executor#Run()
   elseif s:executor_dialer == 2
-    call executor#OpenTerminal()
+    call executor#Compiler()
   elseif s:executor_dialer == 3
-    call executor#OpenTerminalVSC()
-  elseif s:executor_dialer == 4
-    call executor#ToggleResizeWindows()
-  elseif s:executor_dialer == 5
     call executor#Debugger()
+  elseif s:executor_dialer == 4
+    call executor#ToggleDebuggerDefine()
+  elseif s:executor_dialer == 5
+    call executor#ToggleDebuggerMapping()
   elseif s:executor_dialer == 6
-    call executor#ToggleDefineDebugger()
+    call executor#ToggleArgs()
   elseif s:executor_dialer == 7
-    call executor#InstallPDBPP()
+    call executor#ToggleResizeWindows()
   elseif s:executor_dialer == 8
-    call executor#UninstallPDBPP()
+    call executor#InstallPDBPP()
   elseif s:executor_dialer == 9
     call executor#InstallPDBPPConda()
   elseif s:executor_dialer == 10
-    call executor#UninstallPDBPPConda()
+    call executor#KillAllBuffers()
   elseif s:executor_dialer == 11
-    call executor#Run()
+    call executor#OpenTerminalVSC()
   elseif s:executor_dialer == 12
-    call executor#Clean()
+    call executor#OpenTerminal()
   elseif s:executor_dialer == 13
-    call executor#Compiler()
+    call executor#OpenTerminalVert()
   elseif s:executor_dialer == 14
     call executor#Zoom(v:true)
   elseif s:executor_dialer == 15
-    call executor#ToggleArgs()
+    call executor#Clean()
   elseif s:executor_dialer == 16
-    call executor#Menu()
-  elseif s:executor_dialer == 17
     call executor#WinBar()
-  elseif s:executor_dialer == 18
-    call executor#KillAllBuffers()
-  elseif s:executor_dialer == 19
-    call executor#ToggleDebuggerMapping()
-  elseif s:executor_dialer == 20
-    call executor#Config()
+  " elseif s:executor_dialer == 17
+    " call executor#UninstallPDBPP()
+  " elseif s:executor_dialer == 18
+    " call executor#UninstallPDBPPConda()
+  " elseif s:executor_dialer == 19
+    " call executor#Menu()
+  " elseif s:executor_dialer == 20
+    " call executor#Config()
   endif
 endfunction
 "}}}
@@ -685,13 +685,13 @@ endfunction
 function! executor#WinBar()
   nnoremenu WinBar.  :call executor#Menu()<CR>
   nnoremenu WinBar.▶ :call executor#Run()<CR>
-  nnoremenu WinBar.⟲ :call executor#Compiler()<CR>
-  nnoremenu WinBar. :call executor#Debugger()<CR>
-  nnoremenu WinBar.\ ✔︎ :call executor#ToggleDefineDebugger()<CR>
+  nnoremenu WinBar. :call executor#Compiler()<CR>
+  nnoremenu WinBar.ﴫ :call executor#Debugger()<CR>
+  nnoremenu WinBar.ﴫ\  :call executor#ToggleDebuggerDefine()<CR>
   nnoremenu WinBar.ᗧ•••ᗣ  :call executor#ToggleArgs()<CR>
   nnoremenu WinBar. :call executor#OpenTerminalVSC()<CR>
-  nnoremenu WinBar.♻︎ :call executor#Clean()<CR>
-  nnoremenu WinBar.✕ :aunmenu WinBar<CR>
+  nnoremenu WinBar.﯊ :call executor#Clean()<CR>
+  nnoremenu WinBar. :aunmenu WinBar<CR>
 endfunction
 "}}}
 """ .executor.vim {{{
