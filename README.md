@@ -63,6 +63,7 @@ nnoremap <Leader>+ :ExecutorCompiler<CR>
 nnoremap <Leader>c :ExecutorClean<CR>
 nnoremap <Leader>m :ExecutorZoom<CR>
 noremap -m :ExecutorMenu<CR>
+noremap -c :ExecutorCommand<CR>
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
 
@@ -230,6 +231,8 @@ ExecutorMenu                  call executor#Menu()
 ExecutorWinBar                call executor#WinBar()
 " source a local config in your current directory
 ExecutorConfig                call executor#Config()
+" execute a command in the current directory (e.g. make test...)
+ExecutorCommand               call executor#Command()
 " kill all buffers and keep the current buffer
 ExecutorKillAllBuffers silent! execute "%bd|e#|bd#"
 
@@ -243,7 +246,7 @@ nnoremenu WinBar. :call executor#Compiler()<CR>
 nnoremenu WinBar.ﴫ :call executor#Debugger()<CR>
 nnoremenu WinBar.ﴫ\  :call executor#ToggleDebuggerDefine()<CR>
 nnoremenu WinBar.ᗧ•••ᗣ  :call executor#ToggleArgs()<CR>
-nnoremenu WinBar. :call executor#OpenTerminalVSC()<CR>
+nnoremenu WinBar. :call executor#Command()<CR>
 nnoremenu WinBar.﯊ :call executor#Clean()<CR>
 nnoremenu WinBar. :aunmenu WinBar<CR>
 ```

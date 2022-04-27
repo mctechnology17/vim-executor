@@ -626,7 +626,7 @@ function! executor#Menu()
   echom '| 4.ToogleDebuggerDefine  14.Zoom         |'
   echom '| 5.ToggleDebuggerMapping 15.Clean        |'
   echom '| 6.ToggleArgs            16.WinBar       |'
-  echom '| 7.ToggleResizeWindows                   |'
+  echom '| 7.ToggleResizeWindows   17.Command      |'
   echom '| 8.InstallPDBPP                          |'
   echom '| 9.InstallPDBPPConda                     |'
   echom '| 10.KillAllBuffers                       |'
@@ -670,6 +670,8 @@ function! executor#Menu()
     call executor#Clean()
   elseif s:executor_dialer == 16
     call executor#WinBar()
+  elseif s:executor_dialer == 17
+    call executor#Command()
   " elseif s:executor_dialer == 17
     " call executor#UninstallPDBPP()
   " elseif s:executor_dialer == 18
@@ -689,7 +691,7 @@ function! executor#WinBar()
   nnoremenu WinBar.ﴫ :call executor#Debugger()<CR>
   nnoremenu WinBar.ﴫ\  :call executor#ToggleDebuggerDefine()<CR>
   nnoremenu WinBar.ᗧ•••ᗣ  :call executor#ToggleArgs()<CR>
-  nnoremenu WinBar. :call executor#OpenTerminalVSC()<CR>
+  nnoremenu WinBar. :call executor#Command()<CR>
   nnoremenu WinBar.﯊ :call executor#Clean()<CR>
   nnoremenu WinBar. :aunmenu WinBar<CR>
 endfunction
@@ -711,6 +713,19 @@ function! executor#Config()
     else
       return
     endif
+  endif
+endfunction
+"}}}
+""" executor#Command {{{
+function executor#Command()
+  let g:executor_program_args = executor#Args()
+  if g:executor_program_args == ''
+    return
+  endif
+  if s:is_nvim
+     exe 'vsplit term://'.g:executor_program_args
+  else
+    exe 'vert term ++shell '.g:executor_program_args
   endif
 endfunction
 "}}}

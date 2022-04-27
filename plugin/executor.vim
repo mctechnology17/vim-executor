@@ -199,6 +199,7 @@ command! -nargs=0 ExecutorToggleArgs            call executor#ToggleArgs()
 command! -nargs=0 ExecutorMenu                  call executor#Menu()
 command! -nargs=0 ExecutorWinBar                call executor#WinBar()
 command! -nargs=0 ExecutorConfig                call executor#Config()
+command! -nargs=0 ExecutorCommand               call executor#Command()
 command! ExecutorKillAllBuffers silent! execute "%bd|e#|bd#"
 "}}}
 """ WINBAR:
