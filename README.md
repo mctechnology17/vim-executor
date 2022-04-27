@@ -36,17 +36,6 @@ and the arguments for the following variables in your `.vimrc`
 ```vim
 " install executor with Plug
 Plug 'mctechnology17/vim-executor'
-" you can use all executor functions without dependencies, but if
-" you want latex preview, markdown, html, css and javascript you need
-" to install these additional plugins!
-
-" make sure you have pdflatex installed (soon pandoc support)
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-" make sure you have yarn installed
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" for html,css,javascript
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-
 " refresh the sources or close vim and go back in and run the command
 :PlugInstall
 
@@ -76,7 +65,23 @@ nnoremap <Leader>m :ExecutorZoom<CR>
 noremap -m :ExecutorMenu<CR>
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
-Hier -> [.executor.vim](.executor.vim) you can see the default configuration, so you can orient yourself in your vimrc
+
+# Add complements
+You can use all executor functions without dependencies, but if
+you want latex preview, markdown, html, css and javascript you need
+to install these additional plugins!
+
+```vim
+" make sure you have pdflatex installed (soon pandoc support)
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" make sure you have yarn installed
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+" for html,css,javascript
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+```
+
+# Hier you can see the default configuration
+Please feel free to change what suits you best!
 
 ```vim
 """ MAPPING:
@@ -326,6 +331,7 @@ Copyright (c) 2022 Marcos Chow Castro
 - [  ] add support for other plugins
 - [  ] complete the documentation
 - [  ] logs
+- [  ] acknowledgments and references
 
 [twitter]: https://twitter.com/mctechnology17
 [youtube]: https://www.youtube.com/c/mctechnology17
