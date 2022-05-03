@@ -12,7 +12,7 @@
 <br>
 
 
-[Intro](#Intro) | [Installation](#Installation) | [Donate](#Donate) | [LICENSE](#LICENSE)
+[Intro](#Intro) | [Installation](#Installation) | [Add complements](#Add-complements) | [Default configuration](#default-configuration) | [Integration with Windows Terminal](#integration-with-windows-terminal) | [Donate](#Donate) | [LICENSE](#LICENSE)
 
 ----
 
@@ -97,7 +97,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 ```
 
-# Hier you can see the default configuration
+# Default configuration
 Please feel free to change what suits you best!
 
 ```vim
