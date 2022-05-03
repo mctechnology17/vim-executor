@@ -12,7 +12,13 @@
 <br>
 
 
-[Intro](#Intro) | [Installation](#Installation) | [Add complements](#Add-complements) | [Default configuration](#default-configuration) | [Integration with Windows Terminal](#integration-with-windows-terminal) | [Donate](#Donate) | [LICENSE](#LICENSE)
+- [Intro](#Intro)
+- [Installation](#Installation)
+- [Add complements](#Add-complements)
+- [Default configuration](#default-configuration)
+- [Integration with Windows Terminal](#integration-with-windows-terminal)
+- [Donate](#Donate)
+- [LICENSE](#LICENSE)
 
 ----
 
