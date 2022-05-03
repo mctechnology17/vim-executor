@@ -274,6 +274,47 @@ nnoremenu WinBar. :aunmenu WinBar<CR>
 
 <img src="./src/executor_winbar.png" height="450">
 
+# Integration with Windows Terminal
+If you've always wanted some sort of tmux in Windows, this is your chance.
+You not only have an interactive area with PowerShell, CMD or Windows
+Terminal, but also with Linux environments like Kali, Ubuntu etc. Here
+I will show you a configuration how to call multiple terminals in Windows
+Terminal Preview.
+
+```vim
+" Variable to detect if the operating system is windows
+let s:is_win = has('win32unix')||has('win32')||has('win64')||has("win16")||has("win95")
+function! ExecutorTerminalVert()
+  if s:is_win
+    set shell=C:\\Users\\YOURUSER\\AppData\\Local\\Microsoft\\WindowsApps\\kali.exe
+  endif
+  exe "ExecutorTerminalVert"
+endfunction
+function! ExecutorTerminal()
+  if s:is_win
+    set shell=C:\\Users\\YOURUSER\\AppData\\Local\\Microsoft\\WindowsApps\\ubuntu2004.exe
+  endif
+  exe "ExecutorTerminal"
+endfunction
+function! ExecutorTerminalVSC()
+  if s:is_win
+    set shell=cmd.exe
+  endif
+  exe "ExecutorTerminalVSC"
+endfunction
+```
+Of course you can create more functions to have more options at
+convenience. Here is an example of a correct declaration of PowerShell
+and CMD.
+
+```vim
+
+set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+set shell=C:\\Users\\YOURUSER\\AppData\\Local\\Microsoft\\WindowsApps\\cmd.exe
+```
+Remember to install Kali, Ubuntu, ... etc. operating systems before.
+Read the Microsoft documentation for the correct installation on WSL2.
+
 #### Manuaal installation
 If you are not using any plug manager, you can integrate GitManager to
 vim in the following way, keeping in mind that the repository is in your home
