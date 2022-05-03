@@ -38,7 +38,9 @@ and the arguments for the following variables in your `.vimrc`
 Plug 'mctechnology17/vim-executor'
 " refresh the sources or close vim and go back in and run the command
 :PlugInstall
+```
 
+```vim
 " set your config, hier a example(I recom to use the defauld):
 set wildmode=list:longest,list:full
 set wildmenu
