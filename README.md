@@ -91,6 +91,52 @@ noremap -c :ExecutorCommand<CR>
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
 
+#### Manual installation
+If you are not using any plug manager, you can integrate GitManager to
+vim in the following way, keeping in mind that the repository is in your home
+
+```vim
+    set rtp+=~/vim-executor
+```
+
+#### Using [Vundle](https://github.com/gmarik/vundle):
+
+Just add this line to your `~/.vimrc`:
+
+```vim
+Plugin 'mctechnology17/vim-executor'
+```
+And run `:PluginInstall` inside Vim.
+
+#### Using [pathogen.vim](https://github.com/tpope/vim-pathogen):
+
+Copy and paste in your shell:
+
+```bash
+cd ~/.vim/bundle
+git clone https://github.com/mctechnology17/vim-executor
+```
+
+#### Using [vpm](https://github.com/KevinSjoberg/vpm):
+
+Run this command in your shell:
+
+```bash
+vpm insert mctechnology17/vim-executor
+```
+
+#### Using [Plug](https://github.com/junegunn/vim-plug):
+
+Just add this line to your `~/.vimrc` inside plug call:
+
+```vim
+Plug 'mctechnology17/vim-executor'
+```
+
+And run `:PlugInstall` inside Vim or `vim +PlugInstall +qa` from shell.
+
+<img src="https://github.com/mctechnology17/mctechnology17/blob/main/src/PlugInstall.gif" height="450">
+
 # Add complements
 You can use all executor functions without dependencies, but if
 you want latex preview, markdown, html, css and javascript you need
@@ -322,52 +368,6 @@ set shell=C:\\Users\\YOURUSER\\AppData\\Local\\Microsoft\\WindowsApps\\cmd.exe
 ```
 Remember to install Kali, Ubuntu, ... etc. operating systems before.
 Read the Microsoft documentation for the correct installation on WSL2.
-
-#### Manuaal installation
-If you are not using any plug manager, you can integrate GitManager to
-vim in the following way, keeping in mind that the repository is in your home
-
-```vim
-    set rtp+=~/vim-executor
-```
-
-#### Using [Vundle](https://github.com/gmarik/vundle):
-
-Just add this line to your `~/.vimrc`:
-
-```vim
-Plugin 'mctechnology17/vim-executor'
-```
-And run `:PluginInstall` inside Vim.
-
-#### Using [pathogen.vim](https://github.com/tpope/vim-pathogen):
-
-Copy and paste in your shell:
-
-```bash
-cd ~/.vim/bundle
-git clone https://github.com/mctechnology17/vim-executor
-```
-
-#### Using [vpm](https://github.com/KevinSjoberg/vpm):
-
-Run this command in your shell:
-
-```bash
-vpm insert mctechnology17/vim-executor
-```
-
-#### Using [Plug](https://github.com/junegunn/vim-plug):
-
-Just add this line to your `~/.vimrc` inside plug call:
-
-```vim
-Plug 'mctechnology17/vim-executor'
-```
-
-And run `:PlugInstall` inside Vim or `vim +PlugInstall +qa` from shell.
-
-<img src="https://github.com/mctechnology17/mctechnology17/blob/main/src/PlugInstall.gif" height="450">
 
 # Donate
 If you're enjoy my work, feel free to donate or become a sponsor.
