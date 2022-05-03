@@ -313,7 +313,7 @@ ExecutorKillAllBuffers silent! execute "%bd|e#|bd#"
 nnoremenu WinBar.Menu  :call executor#Menu()<CR>
 nnoremenu WinBar.Run :call executor#Run()<CR>
 nnoremenu WinBar.Comp :call executor#Compiler()<CR>
-nnoremenu WinBar.Deb:call executor#Debugger()<CR>
+nnoremenu WinBar.Deb :call executor#Debugger()<CR>
 nnoremenu WinBar.DefD :call executor#ToggleDebuggerDefine()<CR>
 nnoremenu WinBar.Args  :call executor#ToggleArgs()<CR>
 nnoremenu WinBar.CMD:call executor#Command()<CR>
