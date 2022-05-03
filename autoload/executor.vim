@@ -697,24 +697,24 @@ function! executor#WinBar()
 endfunction
 "}}}
 """ .executor.vim {{{
-function! executor#Config()
-  if filereadable(".executor.vim")
-    source .executor.vim
-  endif
-
-  if !filereadable(".executor.vim")
-    call inputsave()
-    let s:executor_config = input('.executor.vim does not exist in the current directory, create? (y/n): ')
-    call inputrestore()
-    if s:executor_config == ''
-      return
-    elseif (s:executor_config ==? "y" || s:executor_config ==? "\r")
-      execute 'edit .executor.vim'
-    else
-      return
-    endif
-  endif
-endfunction
+" function! executor#Config()
+  " if filereadable(".executor.vim")
+    " source .executor.vim
+  " endif
+"
+  " if !filereadable(".executor.vim")
+    " call inputsave()
+    " let s:executor_config = input('.executor.vim does not exist in the current directory, create? (y/n): ')
+    " call inputrestore()
+    " if s:executor_config == ''
+      " return
+    " elseif (s:executor_config ==? "y" || s:executor_config ==? "\r")
+      " execute 'edit .executor.vim'
+    " else
+      " return
+    " endif
+  " endif
+" endfunction
 "}}}
 """ executor#Command {{{
 function executor#Command()
