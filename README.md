@@ -23,12 +23,14 @@
 ----
 
 # Intro
-`executor` multilanguage code executor for vim. Run, compile, clean, debug
-and more with just 1 click!
+`executor` multiplataforma (Windows, Linux and MacOS) multiterminal and
+multilanguage code executor for vim. Run code, compile, maximize windows,
+rename windows, zoom, resize windows/terminals, run commands and more with just
+1 click!
 
-tmux, code run, debugger and more all in one place with native vim!
+tmux, code run, debugger and more all in one place with native VimScript!
 
-Compatibility:
+Languages compatibility:
 ```bash
 python,sh,r,c,cpp,markdown,css,html,javascript # for now
 ```
