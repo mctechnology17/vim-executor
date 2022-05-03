@@ -51,19 +51,33 @@ let g:executor_compiler_run_code = 0
 let g:executor_esc = 2
 " 1 = <S-ARROWS> 2 = <LEADER><ARROWS> 3 = <C-HJKL>
 let g:executor_jump = 1
+" open a vertical terminal
 nnoremap <Leader>v :ExecutorTerminalVert<CR>
+" pen a terminal with size proportional to the vscode terminal
 nnoremap <Leader>x :ExecutorTerminalVSC<CR>
+" open a horizontal terminal
 nnoremap <Leader>X :ExecutorTerminal<CR>
+" toggle to resize windows
 nnoremap ++ :ExecutorResizeWindows<CR>
+" kill all buffers and keep the current buffer
 nnoremap <Leader>k :ExecutorKillAllBuffers<CR>
+" call debugger
 nnoremap <silent> <TAB>+ :ExecutorDebugger<CR>
+" on/off argument input
 nnoremap <Leader>- :ExecutorToggleArgs<CR>
+" run the code like run code for VS Code
 nnoremap <Leader>p :ExecutorRun<CR>
+" compile the code
 nnoremap <Leader>+ :ExecutorCompiler<CR>
+" clean object files: main.o, main.exe, pdf, __pycache__ etc
 nnoremap <Leader>c :ExecutorClean<CR>
+" zoom in the current window/buffer
 nnoremap <Leader>m :ExecutorZoom<CR>
-noremap -m :ExecutorMenu<CR>
+" call a menu
+noremap -x :ExecutorMenu<CR>
+" execute a command in the current directory (e.g. make test...)
 noremap -c :ExecutorCommand<CR>
+" debugger mapping: 0.UNMAP 1.gdb(soon) 2.lldb(soon) 3.pdb 4.vimspector
 noremap -d :ExecutorToggleDebuggerMapping<CR>
 ```
 
