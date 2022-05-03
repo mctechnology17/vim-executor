@@ -310,15 +310,15 @@ ExecutorKillAllBuffers silent! execute "%bd|e#|bd#"
 " Winbar defaults. if you want to customize the winbar you can leave the
 " corresponding variable for activation at 0, or simply add more options of
 " your interest
-nnoremenu WinBar.  :call executor#Menu()<CR>
-nnoremenu WinBar.▶ :call executor#Run()<CR>
-nnoremenu WinBar. :call executor#Compiler()<CR>
-nnoremenu WinBar.ﴫ :call executor#Debugger()<CR>
-nnoremenu WinBar.ﴫ\  :call executor#ToggleDebuggerDefine()<CR>
-nnoremenu WinBar.ᗧ•••ᗣ  :call executor#ToggleArgs()<CR>
-nnoremenu WinBar. :call executor#Command()<CR>
-nnoremenu WinBar.﯊ :call executor#Clean()<CR>
-nnoremenu WinBar. :aunmenu WinBar<CR>
+nnoremenu WinBar.Menu  :call executor#Menu()<CR>
+nnoremenu WinBar.Run :call executor#Run()<CR>
+nnoremenu WinBar.Comp :call executor#Compiler()<CR>
+nnoremenu WinBar.Deb:call executor#Debugger()<CR>
+nnoremenu WinBar.DefD :call executor#ToggleDebuggerDefine()<CR>
+nnoremenu WinBar.Args  :call executor#ToggleArgs()<CR>
+nnoremenu WinBar.CMD:call executor#Command()<CR>
+nnoremenu WinBar.Clean :call executor#Clean()<CR>
+nnoremenu WinBar.Close :aunmenu WinBar<CR>
 ```
 
 #### Interactive menu with dialer
