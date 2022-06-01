@@ -32,14 +32,14 @@ tmux, code run, debugger and more all in one place with native VimScript!
 
 Languages compatibility:
 ```bash
-python,sh,r,c,cpp,markdown,css,html,javascript # for now
+python,sh,r,c,cpp,markdown,css,html,javascript,latex
 ```
 
 # Installation
 
 #### Quick start
 Simply install the plugin with your preferred plugin handler
-and the arguments for the following variables in your `.vimrc`
+and the arguments for the following variables in your `vimrc`
 
 ```vim
 " install executor with Plug
