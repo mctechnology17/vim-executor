@@ -392,15 +392,6 @@ Released under the GNU General Public License v3.0.
 
 Copyright (c) 2022 Marcos Chow Castro
 
-# TODO
-- [  ] add support for other languages
-- [  ] add support for other shells
-- [  ] add support for other operatings systems
-- [  ] add support for other plugins
-- [  ] complete the documentation
-- [  ] logs
-- [  ] acknowledgments and references
-
 [twitter]: https://twitter.com/mctechnology17
 [youtube]: https://www.youtube.com/c/mctechnology17
 [instagram]: https://www.instagram.com/mctechnology17/
