@@ -23,11 +23,20 @@ function! executor#python#run()
     let g:executor_program_args_python = ''
   endif
 
-  if s:is_nvim
-    exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
-  else
-    exe 'vert term python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+  if has('python3')
+    if s:is_nvim
+      exe 'vsplit term://python3 '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+    else
+      exe 'vert term python3 '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+    endif
+  elseif has('python')
+    if s:is_nvim
+      exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+    else
+      exe 'vert term python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+    endif
   endif
+
 endfunction
 "}}}
 """ s:ExecutorDebuggerPythonPDBPP {{{
@@ -38,17 +47,32 @@ function executor#python#debuggerpdbpp()
     let g:executor_program_args_python = ''
   endif
 
-  if s:is_nvim
-    " exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
-    exe 'vsplit term://python '
-          \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
-          \ ' pdb % '.g:executor_program_args_python
-  else
-    " execute 'vert term python '.g:executor_pdbpp_flags.' pdb % '.g:executor_program_args
-    exe 'vert term python '
-          \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
-          \ ' pdb % '.g:executor_program_args_python
+  if has('python3')
+    if s:is_nvim
+      " exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+      exe 'vsplit term://python3 '
+            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+            \ ' pdb % '.g:executor_program_args_python
+    else
+      " execute 'vert term python '.g:executor_pdbpp_flags.' pdb % '.g:executor_program_args
+      exe 'vert term python3 '
+            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+            \ ' pdb % '.g:executor_program_args_python
+    endif
+  elseif has('python')
+    if s:is_nvim
+      " exe 'vsplit term://python '.g:executor_compiler_flags_python.' % '.g:executor_program_args_python
+      exe 'vsplit term://python '
+            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+            \ ' pdb % '.g:executor_program_args_python
+    else
+      " execute 'vert term python '.g:executor_pdbpp_flags.' pdb % '.g:executor_program_args
+      exe 'vert term python '
+            \ .g:executor_compiler_flags_python.' '.g:executor_debugger_flags_python.
+            \ ' pdb % '.g:executor_program_args_python
+    endif
   endif
+
 endfunction
 "}}}
 
